@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<body>
+<!--Slider-->
+<div id="overlay" th:fragment="slider">
+<!--    home-->
+    <section  id="showcase">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+
+            <div class="carousel-inner">
+                <div class="carousel-item carousel-image-1 active">
+                    <div class="container">
+                        <div class="carousel-caption d-none d-md-block text-right mb-5">
+                            <h1 class="display-3">Catch-Up Dream</h1>
+                            <p class="lead">Lorem Ipsum is simply dummy text of the printing and typesetting
+                                industry.</p>
+                            <button class="btn btn-info btn-lg">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item carousel-image-2">
+                    <div class="carousel-caption d-none d-md-block text-right mb-5">
+                        <h1 class="display-3">Do What You Want</h1>
+                        <p class="lead">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                        <button class="btn btn-info btn-lg">Learn More</button>
+                    </div>
+                </div>
+
+                <div class="carousel-item carousel-image-3">
+                    <div class="carousel-caption d-none d-md-block text-right mb-5">
+                        <h1 class="display-3">Be Smart</h1>
+                        <p class="lead">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                        <button class="btn btn-info btn-lg">Learn More</button>
+                    </div>
+                </div>
+
+            </div>
+            <a href="#myCarousel" data-slide="prev" class="carousel-control-prev">
+                <span class="carousel-control-prev-icon"></span>
+            </a>
+
+            <a href="#myCarousel" data-slide="next" class="carousel-control-next">
+                <span class="carousel-control-next-icon"></span>
+            </a>
+        </div>
+    </section>
+
+<!--    for icon-->
+    <section  class="py-5 home_icon">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3 text-center">
+                    <i class="fas fa-book"></i>
+                    <h3>Explore</h3>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting
+                        industry</p>
+                </div>
+
+                <div class="col-md-4 mb-3 text-center">
+                    <i class="fas fa-cloud"></i>
+                    <h3>Find</h3>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting
+                        industry</p>
+                </div>
+
+                <div class="col-md-4 mb-3 text-center">
+                    <i class="fas fa-store"></i>
+                    <h3>Buy It</h3>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting
+                        industry</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!--    bestseller-->
+    <section>
+        <div class="container-fluid bg-light text-center" id="bestsellers">
+            <h3 class="my-5">BestSellers</h3>
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card mb-3">
+                            <img alt="" class="card-img-top" th:src="${allbooks.get(3).imgUrl}">
+                            <div class="card-body">
+                                <h5 class="card-title" th:text="${allbooks.get(3).title}"></h5>
+                                <p class="card-text" th:text="${allbooks.get(3).description}"></p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <a class="btn btn-link" href="#">Buy</a>
+                                    <a class="card-text" th:text="${allbooks.get(3).price + '$'}"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-4">
+                        <div class="card mb-3">
+                            <img alt="" class="card-img-top" th:src="${allbooks.get(1).imgUrl}">
+                            <div class="card-body">
+                                <h5 class="card-title" th:text="${allbooks.get(1).title}"></h5>
+                                <p class="card-text" th:text="${allbooks.get(1).description}"></p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <a class="btn btn-link" href="#">Buy</a>
+                                    <a class="card-text" th:text="${allbooks.get(1).price + '$'}"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-4">
+                        <div class="card mb-3">
+                            <img alt="" class="card-img-top" th:src="${allbooks.get(2).imgUrl}">
+                            <div class="card-body">
+                                <h5 class="card-title" th:text="${allbooks.get(2).title}"></h5>
+                                <p class="card-text" th:text="${allbooks.get(2).description}"></p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <a class="btn btn-link" href="#">Buy</a>
+                                    <a class="card-text" th:text="${allbooks.get(2).price + '$'}"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!--home heading section-->
+    <section id="home-heading" class="py-5">
+        <div class="dark-overly">
+            <div class="row">
+                <div class="col">
+                    <div class="container text-center">
+                        <h3>Are You Ready to Get Started?</h3>
+                        <p class="lead">Lorem Ipsum is simply dummy text of the printing and typesetting
+                            industry</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--  Context Header  -->
+    <section>
+        <div class="container py-5">
+            <div class="row">
+                <div class="col">
+                    <h1 class="display-3">BENEFITS OF READING</h1>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+                        has been the industry's standard dummy text ever since the 1500s, when an unknown
+                        printer took a galley of type and scrambled it to make a type specimen book. It has
+                        survived not only five centuries, but also the leap into electronic typesetting,
+                        remaining essentially unchanged. It was popularised in the 1960s with the release of
+                        Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
+                        publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                    <a href="#" th:href="@{/shop/show-all-books}" class="btn btn-lg btn-outline-info">LEARN MORE</a>
+                </div>
+                <div class="col">
+                    <img src="../../static/image/img/laptop.png" th:src="@{/image/img/laptop.png}" class="img-fluid"
+                         alt="Image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--image-->
+    <section>
+        <div class="container py-4 text-center">
+            <h1>WHAT OTHERS SAYING</h1>
+            <h3 class="text-info">#BOOKSHELF</h3>
+            <div class="row">
+                <div class="col-md-3" th:each="book : ${allbooks}">
+                    <div th:if="book.imgUrl != null">
+                        <img th:src="${book.imgUrl}" class="img-thumbnail mb-3" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--footer-->
+    <section>
+        <div id="quote" class="container py-5">
+            <blockquote class="blockquote text-center">
+                <h3><i class="fas fa-quote-left"></i></h3>
+                <p>
+                <span>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+                        has been the industry's standard dummy text ever since the 1500s, when an unknown
+                        printer took a galley of type and scrambled it to make a type specimen book. It has
+                        survived not only five centuries, but also the leap into electronic typesetting,
+                        remaining essentially unchanged. It was popularised in the 1960s with the release of
+                        Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
+                        publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                </span>
+                </p>
+                <footer class="blockquote-footer">Thomas Hardy</footer>
+            </blockquote>
+        </div>
+    </section>
+
+    <!--   footer text -->
+    <section id="newsetters">
+        <div class="container text-white text-center py-5">
+            <p class="lead">EXPLORE AND ENJOY OUR BOOKSHELF AND MAKE HAPPY</p>
+            <div class="row justify-content-center">
+                <div class="col-md-4">
+                    <form action="#" class="form-inline">
+                        <div class="input-group">
+                            <input type="text" placeholder="Enter Email" class="form-control">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary">JOIN NOW</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--section footer-->
+    <section id="footer" class="p-3 ">
+        <ul class="nav justify-content-center flex-column flex-sm-row">
+            <li class="nav-item">
+                <a href="" class="nav-link text-white">FAQ</a>
+            </li>
+            <li class="nav-item">
+                <a href="" class="nav-link text-white">SEARCH</a>
+            </li>
+            <li class="nav-item">
+                <a href="" class="nav-link text-white">ABOUT</a>
+            </li>
+            <li class="nav-item">
+                <a href="" class="nav-link text-white">CONTACT US</a>
+            </li>
+        </ul>
+    </section>
+
+</div>
+</body>
+</html>

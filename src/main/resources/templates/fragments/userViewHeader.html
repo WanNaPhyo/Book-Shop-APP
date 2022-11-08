@@ -1,0 +1,97 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en" xmlns:th="http://www.thymeleaf.org">-->
+
+<!--<body>-->
+<!--  <nav th:fragment="userHead" class="navbar navbar-expand-md navbar-dark text-light">-->
+<!--    <div class="container">-->
+<!--      <a href="#" class="navbar-brand">BookShelf</a>-->
+<!--      <button class="navbar-toggler" type="button" data-toggle="collapse"-->
+<!--      data-target="#myNav">-->
+<!--        <span class="navbar-toggler-icon"></span>-->
+<!--      </button>-->
+
+<!--      <div class="collapse navbar-collapse" id="myNav">-->
+<!--        <ul class="navbar-nav ml-auto">-->
+<!--          <li class="nav-item">-->
+<!--            <a class="nav-link" href="#">HOME</a>-->
+<!--          </li>-->
+
+<!--          <li class="nav-item">-->
+<!--            <a class="nav-link" href="#">FEATURE</a>-->
+<!--          </li>-->
+
+<!--          <li class="nav-item">-->
+<!--            <a class="nav-link" href="#">BLOG</a>-->
+<!--          </li>-->
+
+<!--          <li class="nav-item">-->
+<!--          <a class="nav-link" href="#">GALLARY</a>-->
+<!--          </li>-->
+
+<!--          <li class="nav-item">-->
+<!--            <a class="nav-link" href="#">SHOP</a>-->
+<!--          </li>-->
+
+<!--          <li class="nav-item">-->
+<!--            <a class="nav-link" href="#">CONTACT US</a>-->
+<!--          </li>-->
+<!--        </ul>-->
+
+<!--      </div>-->
+<!--    </div>-->
+<!--  </nav>-->
+<!--</body>-->
+<!--</html>-->
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<body>
+<nav th:fragment="userHead" class="navbar navbar-expand-md navbar-dark text-dark">
+    <div class="container">
+        <a href="#" th:href="@{/}" class="navbar-brand" style="color: cyan">BookShelf</a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#myNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="myNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a href="#" class="nav-link">HOME</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">FEATURE</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">BLOG</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">GALLARY</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">SHOP</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">CONTACT US</a>
+                </li>
+            </ul>
+
+            <div sec:authorize="!isAuthenticated()">
+                <a href="#" th:href="@{/login}">Login</a>
+            </div>
+
+            <div sec:authorize="isAuthenticated()">
+
+                <a href="javascript: document.logoutForm.submit()">Logout</a>
+
+                <form name="logoutForm" th:action="@{/logout}" method="post" th:hidden="true">
+                    <input hidden type="submit" value="Sign Out"/>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</nav>
+</body>
+</html>
